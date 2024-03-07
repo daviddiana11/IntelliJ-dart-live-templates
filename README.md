@@ -4,6 +4,7 @@ Some [IntelliJ IDEA live templates](https://www.jetbrains.com/help/idea/using-li
 # DTO
 
 ### dtojsonserializable
+![dtojsonserializable](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/752f9546-e6fe-429a-b071-c75d9a2ae3bb)
 ```dart
 import 'package:amos_mobile_system/system/offline/offline.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -69,6 +70,7 @@ className()
 # Realm
 
 ### realmclass
+![realmclass](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/fedac6e3-c407-429b-a650-dde9a46b4a0c)
 ```dart
 import 'package:realm/realm.dart';
 
@@ -97,6 +99,7 @@ fileNameWithoutExtension()
 - [X] Skip if defined
 
 ### realmdtomapper
+![realmdtomapper](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/bd71487b-5110-4797-9f1f-2e8d76bf6900)
 ```dart
 class $ENTITY$RealmDtoMapper
     extends RealmDtoMapper<$ENTITY$Dto, $ENTITY$Realm> {
@@ -122,21 +125,28 @@ regularExpression(capitalize(camelCase(regularExpression(fileNameWithoutExtensio
 
 
 # Platform-dependent locator pattern for a repository
+### Dart repository locator pattern
+> [!NOTE]
+> This is a file template; not live template.
+![file template dart repo locator pattern](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/d8342dd2-8cf3-4183-bff9-99489a993870)
+
 
 ### repolocator
+![repolocator](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/f6fd097e-8a9f-4f78-adc1-169defc080e1)
 ```dart
-$CLASSNAME$RepositoryImpl getPlatformImpl() =>
+$ENTITY$RepositoryImpl getPlatformImpl() =>
     throw UnsupportedError(
       'No implementation without packages dart:html or dart:io',
     );
 
 ```
 
-CLASSNAME
-blank
-- [ ] Skip if defined
+ENTITY
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"repository|locator","")))
+- [x] Skip if defined
 
 ### abrepoimpl
+![2024-03-07_11h23_54](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/339b8f9a-b88b-4dee-b76b-4b1e553d6411)
 ```dart
 import '$ENTITY_FILENAME$_repository_locator.dart'
     if (dart.library.html) 'web_$ENTITY_FILENAME$_repository_impl.dart'
@@ -152,14 +162,15 @@ abstract class $ENTITY$RepositoryImpl extends $ENTITY$Repository {
 ```
 
 ENTITY
-blank
-- [ ] Skip if defined
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"repository|impl","")))
+- [x] Skip if defined
 
 ENTITY_FILENAME
-blank
-- [ ] Skip if defined
+regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"repository|impl| ","")
+- [x] Skip if defined
 
 ### universalrepoimpl
+![universalrepoimpl](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/a9d3349b-c07e-4f98-8141-34757e7479cb)
 ```dart
 $ENTITY$RepositoryImpl getPlatformImpl() => Universal$ENTITY$RepositoryImpl();
 
@@ -170,10 +181,11 @@ class Universal$ENTITY$RepositoryImpl implements $ENTITY$RepositoryImpl {
 ```
 
 ENTITY
-blank
-- [ ] Skip if defined
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"universal|repository|impl","")))
+- [x] Skip if defined
 
 ### webrepoimpl
+![webrepoimpl](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/04854168-5b61-43e6-a3da-19ebc54d6340)
 ```dart
 $ENTITY$RepositoryImpl getPlatformImpl() => Web$ENTITY$RepositoryImpl();
 
@@ -184,5 +196,5 @@ class Web$ENTITY$RepositoryImpl implements $ENTITY$RepositoryImpl {
 ```
 
 ENTITY
-blank
-- [ ] Skip if defined
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"web|repository|impl","")))
+- [x] Skip if defined
