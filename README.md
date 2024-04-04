@@ -1,5 +1,6 @@
 # IntelliJ-dart-live-templates
 Some [IntelliJ IDEA live templates](https://www.jetbrains.com/help/idea/using-live-templates.html) to use for dart.
+Check [JetBrains' documentation](https://www.jetbrains.com/help/idea/sharing-live-templates.html#export-and-import-live-templates-manually) for importing the settings.
 
 # DTO
 
