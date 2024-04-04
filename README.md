@@ -123,6 +123,17 @@ ENTITY
 regularExpression(capitalize(camelCase(regularExpression(fileNameWithoutExtension(), "_", " "))), "Realm|Dto|Mapper", "")
 - [ ] Skip if defined
 
+### rquery
+```dart
+final realm = RealmInstance.open();
+final realmResults = realm.query<$REALM$>(r'', []);
+
+realm.close();
+```
+
+REALM
+all blank
+- [ ] Skip if defined
 
 # Platform-dependent locator pattern for a repository
 ### Dart repository locator pattern
@@ -166,7 +177,7 @@ capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtensio
 - [x] Skip if defined
 
 ENTITY_FILENAME
-regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"repository|impl| ","")
+regularExpression(fileNameWithoutExtension(),"_repository|_impl| ","")
 - [x] Skip if defined
 
 ### universalrepoimpl
