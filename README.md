@@ -182,11 +182,19 @@ regularExpression(fileNameWithoutExtension(),"_repository|_impl| ","")
 - [x] Skip if defined
 
 ### universalrepoimpl
-![universalrepoimpl](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/a9d3349b-c07e-4f98-8141-34757e7479cb)
+![2024-04-04_11h00_07](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/04f6b9b0-1555-4c50-94ce-6c2bac2cd558)
+
 ```dart
-$ENTITY$RepositoryImpl getPlatformImpl() => Universal$ENTITY$RepositoryImpl();
+$ENTITY$RepositoryImpl getPlatformImpl() => Universal$ENTITY$RepositoryImpl(
+        $ENTITY$RealmDataSource(),
+        Rpc$ENTITY$DataSource(),
+    );
 
 class Universal$ENTITY$RepositoryImpl implements $ENTITY$RepositoryImpl {
+  final $ENTITY$LocalDataSource _localDataSource;
+  final $ENTITY$RemoteDataSource _remoteDataSource;
+
+  Universal$ENTITY$RepositoryImpl(this._localDataSource, this._remoteDataSource);
 
 }
 
