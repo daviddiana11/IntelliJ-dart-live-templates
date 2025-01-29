@@ -4,39 +4,144 @@ Check [JetBrains' documentation](https://www.jetbrains.com/help/idea/sharing-liv
 
 # DTO
 
-### dtojsonserializable
-![dtojsonserializable](https://github.com/daviddiana11/IntelliJ-dart-live-templates/assets/95964959/752f9546-e6fe-429a-b071-c75d9a2ae3bb)
+### dtoclass
+![2025-01-29_14h00_42](https://github.com/user-attachments/assets/af4aaca5-b11a-431d-b3ee-eed25e79982b)
 ```dart
 import 'package:amos_mobile_system/system/offline/offline.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part '$PART$';
+part '$FILENAME$.g.dart';
 
 @JsonSerializable()
-class $DTO_NAME$Dto extends Dto {
+class $CLASSNAME$Dto extends Dto {
 
-  $DTO_NAME$Dto({
-  });
-  
-  static $DTO_NAME$Dto fromJson(Map<String, dynamic> json) =>
-      _$$$DTO_NAME$DtoFromJson(json);
-  
-  static List<$DTO_NAME$Dto> fromJsonList(List<dynamic> jsonList) {
-        final List<$DTO_NAME$Dto> result = [];
-        for (final json in jsonList.cast<Map<String, dynamic>>()) {
-            result.add(fromJson(json));
-        }
-        return result;
+  static $CLASSNAME$Dto fromJson(Map<String, dynamic> json) =>
+      _$$$CLASSNAME$DtoFromJson(json);
+
+  static List<$CLASSNAME$Dto> fromJsonList(List<dynamic> jsonList) {
+    final List<$CLASSNAME$Dto> result = [];
+    for (final json in jsonList.cast<Map<String, dynamic>>()) {
+      result.add(fromJson(json));
     }
+    return result;
+  }
+  
+  @override
+  Map<String, dynamic> toJson() => _$$$CLASSNAME$DtoToJson(this);
+  
 }
 
 ```
-PART
-concat(fileNameWithoutExtension(), ".g.dart")
+CLASSNAME
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"dto","")))
 - [x] Skip if defined
 
 
-DTO_NAME
+FILENAME
+fileNameWithoutExtension()
+- [x] Skip if defined
+
+# Unit test
+
+### newmock
+![2025-01-29_14h26_25](https://github.com/user-attachments/assets/ae92711f-f1b0-43ee-b74d-b05b7241a9b1)
+```dart
+class $mock$ extends Mock implements $classToMock$ {}
+```
+
+classToMock
+all blank
+- [ ] Skip if defined
+
+mock
+concat("Mock", classToMock)
+- [x] Skip if defined
+
+### newtestmain
+![2025-01-29_14h16_06](https://github.com/user-attachments/assets/1c9706d7-e618-44e7-b8ae-c554ebde90c7)
+```dart
+import 'package:flutter_test/flutter_test.dart';
+
+/// Tests around [$classname$].
+///
+void main() {
+    final underTest = $classname$();
+
+    group('$groupdesc$', () {
+            test('should $testdesc$', () {
+    // given 
+
+    // when 
+
+    // then
+
+    });
+  });
+}
+
+```
+
+classname
+capitalize(camelCase(regularExpression(regularExpression(fileNameWithoutExtension(), "_", " "),"test","")))
+- [ ] Skip if defined
+
+groupdesc
+all blank
+- [ ] Skip if defined
+
+testdesc
+all blank
+- [ ] Skip if defined
+
+### newgroupunittest
+![2025-01-29_14h19_57](https://github.com/user-attachments/assets/620ac82c-79b5-4ada-8211-e40f108ab896)
+```dart
+group('$groupdesc$', () {
+    test('$desc$', () {
+    // given 
+
+    // when 
+
+    // then
+
+    });
+});
+```
+
+groupdesc
+all blank
+- [ ] Skip if defined
+
+desc
+all blank
+- [ ] Skip if defined
+
+### newunittest
+![2025-01-29_14h21_30](https://github.com/user-attachments/assets/8ef4da95-b297-45b2-9c8c-b7eb3757371b)
+```dart
+test('$desc$', () {
+// given 
+
+// when 
+
+// then
+
+});
+```
+
+desc
+all blank
+- [ ] Skip if defined
+
+### regmockservice
+![2025-01-29_14h32_11](https://github.com/user-attachments/assets/8befa1cf-11d1-489c-a50b-ea780800e6a4)
+```dart
+Amos().registerService<$service$>(
+  mock$service$,
+);
+```
+
+service
 all blank
 - [ ] Skip if defined
 
